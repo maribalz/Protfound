@@ -1,0 +1,14 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Relacion extends Model
+{
+    protected $table= 'relaciones';
+
+    protected $fillable = [
+        'id', 'id_sector', 'id_producto'
+    ];
+}
