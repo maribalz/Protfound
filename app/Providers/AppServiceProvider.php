@@ -21,7 +21,6 @@ class AppServiceProvider extends ServiceProvider
 
         $direccion= datos_empresa::where('tipo','direccion')->first();
         $tlf= datos_empresa::where('tipo','telefono')->first();
-        $cel= datos_empresa::where('tipo','celular')->first();
         $email= datos_empresa::where('tipo','email')->first();
         // $redes= redes_social::orderBy('id','desc')->get();
         $redes2= redes_social::orderBy('id','asc')->get();
@@ -32,7 +31,6 @@ class AppServiceProvider extends ServiceProvider
             'direccion' => $direccion, 
             'tlf' => $tlf, 
             'email' => $email,
-            'cel' => $cel,
             // 'redes2' => $redes2,
             'logohead' => $logohead,
             'favicon' => $favicon,
