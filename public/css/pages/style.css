@@ -33,40 +33,41 @@ body{
 }
 
 nav{
-	height: 114px!important;
+	height: 99px!important;
 	color: #747474;
     background-color: white;
+    border-bottom: 1px solid #ddd;
 }
 nav a{
 	color: #444444;
 }
 nav ul a{
 	color: #444444;
+	font-size: 17px;
 }
 nav ul a:hover{
 	color: #E0131A!important;
+	background-color: white;
 }
 
 nav ul>li{
 
-	height: 50px;
+	height: 98px;
 
 	display: flex;
 
 	justify-content: center;
 
 	align-items: center;
+	border-bottom: 3px solid white;
 
 }
-
-nav ul{
-
-	margin-top: 13px;
-
+nav ul>li:hover{
+	border-bottom: 3px solid #E1131B;
 }
 
 img.logo{
-	margin-top: 12px;
+	margin-top: 22px;
 	width: 100%;
 }
 
@@ -127,82 +128,43 @@ nav .dropdown-content{
 
 /*-----------------------------------------------------FOOTER-------------------------*/
 
-
-
-
-
 .page-footer{
-
-	background-color:#EEEEEE;
-
-	color: #747474;
-
-}
-
-
-
-h5{
-
-	font-size: 16px;
-
-	font-weight: bold;
-
-	color: #E43449;
-
+	background-color:#2B2B2B;
+	color: white;
+	padding-top: 53px;
+	background-image: url("../../imagenes/fondofoot.png");
+	background-size: cover;
 }
 
 .texto-footer{
-
-	font-size: 15px;
-
-	color: #747474;
-
+	font-size: 16px;
+	color: white;
 	font-weight: 400;
-
-
-
 }
 
 .texto-mail{
-
-        color: #747474;
-
+        color: white;
         text-decoration: none;
-
         transition: 0.2s;
-
-    }
-
-
-
-
-
-.margenes-f{
-
-	display: flex;
-
-    justify-content: center;
-
-    margin-top: 10%;
-
 }
 
-
+.margenes-f{
+	display: flex;
+    justify-content: center;
+    margin-top: 6%;
+}
 
 .margenfoot{
-
 	margin-bottom: 100px;
-
+}
+footer .material-icons{
+	color: #FF2D00;
 }
 
 @media all and (max-width: 524px){
-
 		.imgfoot{
-
 			width: 236px;
-
 		}
-
 }
 
 /*--------------------------------------------------------------*/
