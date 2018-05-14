@@ -10,9 +10,9 @@
 
 <div class="row">
 
-	<div class="col-xs-12 col-md-8 col-md-offset-2">
+	<div class="col-xs-12 col-md-10 col-md-offset-1">
 
-		<div class="panel panel-default  col-sm-8">
+		<div class="panel panel-default  col-sm-10">
 
             <div class="panel-heading">
 
@@ -20,7 +20,7 @@
 
             </div>
 
-
+        @include('flash::message')
 
     @if(count($errors) > 0)
 
@@ -38,61 +38,32 @@
 
             @endif
 
-    {!! Form::open(['route' => 'calidad.update_calidad', 'method' => 'POST', 'class'=> 'form-horizontal'])!!}
+    {!! Form::open(['route' => 'calidad.update_calidad', 'method' => 'POST', 'class'=> 'form-horizontal', 'files'=>true])!!}
 
         <div class="form-group col-sm-12 pad-panel" >
 
             {!! Form::text('id', $calidad->id, ['class' => 'form-control novisi'])!!}
 
-            {!!Form::label('titulo_es','Nombre Español', ['class' => 'control-label'])!!}
-            {!! Form::text('titulo_es', $calidad->titulo_es , ['class' => 'form-control', 'placeholder' => '', 'required'])!!}
+            {!!Form::label('texto1','Texto 1', ['class' => 'control-label'])!!}
+            {!! Form::textarea('texto1', $calidad->texto1 , ['class' => 'form-control', 'placeholder' => '', 'required'])!!}
 
         </div>
         <div class="form-group col-sm-12 pad-panel" >
 
-            {!!Form::label('titulo_en','Nombre Inglés', ['class' => 'control-label'])!!}
-            {!! Form::text('titulo_en', $calidad->titulo_en , ['class' => 'form-control', 'placeholder' => '', 'required'])!!}
+            {!!Form::label('texto2','Texto 2', ['class' => 'control-label'])!!}
+            {!! Form::textarea('texto2', $calidad->texto2 , ['class' => 'form-control', 'placeholder' => '', 'required'])!!}
 
         </div>
         <div class="form-group col-sm-12 pad-panel" >
 
-            {!!Form::label('titulo_pt','Nombre Portugues', ['class' => 'control-label'])!!}
-            {!! Form::text('titulo_pt', $calidad->titulo_pt , ['class' => 'form-control', 'placeholder' => '', 'required'])!!}
+            {!!Form::label('certificado1','Certificado 1', ['class' => 'control-label'])!!}
+            {!! Form::file('certificado1', ['class' => 'form-control'])!!}
 
         </div>
         <div class="form-group col-sm-12 pad-panel" >
 
-            {!!Form::label('contenido_es','Contenido en español ', ['class' => 'control-label'])!!}
-
-              
-
-            {!! Form::textarea('contenido_es',$calidad->contenido_es, ['class' => 'form-control'])!!}
-
-           
-
-        </div>
-
-        <div class="form-group col-sm-12 pad-panel" >
-
-            {!!Form::label('contenido_en','Contenido en Inglés ', ['class' => 'control-label'])!!}
-
-              
-
-            {!! Form::textarea('contenido_en',$calidad->contenido_en, ['class' => 'form-control'])!!}
-
-           
-
-        </div>
-
-        <div class="form-group col-sm-12 pad-panel" >
-
-            {!!Form::label('contenido_pt','Contenido en Portugués ', ['class' => 'control-label'])!!}
-
-              
-
-            {!! Form::textarea('contenido_pt',$calidad->contenido_pt, ['class' => 'form-control'])!!}
-
-           
+            {!!Form::label('certificado2','Certificado 2', ['class' => 'control-label'])!!}
+            {!! Form::file('certificado2', ['class' => 'form-control'])!!}
 
         </div>
 
@@ -122,14 +93,9 @@
 
 <script>
 
-    CKEDITOR.replace("contenido_es");
-
-    CKEDITOR.replace("contenido_en");
-
-    CKEDITOR.replace("contenido_pt");
-
+    CKEDITOR.replace("texto1");
+    CKEDITOR.replace("texto2");
     CKEDITOR.config.width = 500;
-
     CKEDITOR.config.width = '99%';
 
 </script>

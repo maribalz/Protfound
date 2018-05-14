@@ -1,0 +1,14 @@
+.texto2{
+	color: #001D92;
+    font-size: 26px;
+    font-style: italic;
+    border-top: 1px solid #001D92;
+    margin-top: 7px;
+    width: 79%;
+}
+.texto2 p{
+	margin-top: 0px;
+}
+.textoemp p{
+	margin-top: 0px;
+}

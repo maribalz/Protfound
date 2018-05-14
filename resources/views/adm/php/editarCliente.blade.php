@@ -38,7 +38,7 @@
 
             @endif
 
-    {!! Form::open(['route' => 'clientes.update_cliente', 'method' => 'POST', 'class'=> 'form-horizontal'])!!}
+    {!! Form::open(['route' => 'clientes.update_cliente', 'method' => 'POST', 'class'=> 'form-horizontal', 'files'=> true])!!}
 
         <div class="form-group col-sm-12 pad-panel" >
 
@@ -52,7 +52,12 @@
 
         </div>
 
+        <div class="form-group col-sm-12 pad-panel" >
 
+            {!!Form::label('imagen','Imagen', ['class' => 'control-label'])!!}
+            {!! Form::file('imagen', ['class' => 'form-control'])!!}
+
+        </div>
 
         <div class="form-group col-sm-12 pad-panel" >
 

@@ -13,6 +13,6 @@ class slider_home extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'imagen', 'texto_es', 'texto_en', 'texto_pt', 'orden'
+        'id', 'imagen', 'texto','orden'
     ];
 }

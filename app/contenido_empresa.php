@@ -12,6 +12,6 @@ class contenido_empresa extends Model
      * @var array
      */
     protected $fillable = [
-        'id','titulo_es', 'titulo_en', 'titulo_pt', 'texto_es','texto_en', 'texto_pt', 'imagen'
+        'id','titulo', 'texto1','texto2', 'texto_video', 'imagen','video'
     ];
 }

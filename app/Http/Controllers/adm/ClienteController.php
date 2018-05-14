@@ -24,6 +24,16 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         $cliente= new Cliente($request->all());
+        $id= Cliente::all()->max('id');
+        $newid= $id+1;
+        if ($request->hasFile('imagen')) {
+            if ($request->file('imagen')->isValid()) {
+                $file = $request->file('imagen');
+                $path = public_path('imagenes/clientes/');
+                $request->file('imagen')->move($path, $newid.'_'.$file->getClientOriginalName());
+                $cliente->imagen = 'imagenes/clientes/' . $newid.'_'.$file->getClientOriginalName();
+            }
+        }    
         $cliente->save();
         flash('Se ha registrado de forma exitosa')->success()->important();
         return redirect()->route('clientes.index');
@@ -46,7 +56,18 @@ class ClienteController extends Controller
     {
         $cliente=Cliente::find($request->id);
         $cliente->nombre=$request->nombre;
-        $cliente->orden=$request->orden;    
+        $cliente->orden=$request->orden; 
+
+        $id= Cliente::all()->max('id');
+        $newid= $id+1;
+        if ($request->hasFile('imagen')) {
+            if ($request->file('imagen')->isValid()) {
+                $file = $request->file('imagen');
+                $path = public_path('imagenes/clientes/');
+                $request->file('imagen')->move($path, $newid.'_'.$file->getClientOriginalName());
+                $cliente->imagen = 'imagenes/clientes/' . $newid.'_'.$file->getClientOriginalName();
+            }
+        }    
         $cliente->save();
         
         flash('Se ha actualizado de forma exitosa')->success()->important();

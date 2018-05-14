@@ -45,7 +45,7 @@
 						<tr>
 
 							<td>{{$descarga->orden}}</td>
-							<td>{{$descarga->nombre_es}}</td>
+							<td>{{$descarga->nombre}}</td>
 							<td>
 
 							<a href="{{ route('descargas.edit',$descarga->id) }}" class="btn btn-xs btn-warning">Editar</a>

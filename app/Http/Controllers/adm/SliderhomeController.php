@@ -96,9 +96,7 @@ class SliderhomeController extends Controller
         $id= slider_home::all()->max('id');
         $newid= $id+1;
         $slider=slider_home::find($request->id);
-        $slider->texto_es=$request->texto_es;
-        $slider->texto_en=$request->texto_en;
-        $slider->texto_pt=$request->texto_pt;
+        $slider->texto=$request->texto;
         $slider->orden=$request->orden;
         if ($request->hasFile('imagen')) {
             if ($request->file('imagen')->isValid()) {

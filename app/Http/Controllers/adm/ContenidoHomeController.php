@@ -77,22 +77,48 @@ class ContenidoHomeController extends Controller
         $newid= $id+1;
 
         $contenido=contenido_home::find($request->id);
-        $contenido->texto_es=$request->texto_es;
-        $contenido->texto_en=$request->texto_en;
-        $contenido->texto_pt=$request->texto_pt;
-        $contenido->titulo_es=$request->titulo_es;
-        $contenido->titulo_en=$request->titulo_en;
-        $contenido->titulo_pt=$request->titulo_pt;
+        $contenido->texto=$request->texto;
+        $contenido->texto_industria=$request->texto_industria;
+        $contenido->titulo=$request->titulo;
+        $contenido->sector1_texto=$request->sector1_texto;
+        $contenido->sector2_texto=$request->sector2_texto;
+        $contenido->sector3_texto=$request->sector3_texto;
+        $contenido->sector4_texto=$request->sector4_texto;
+        
         $contenido->link=$request->link;
 
-        if ($request->hasFile('imagen')) {
-            if ($request->file('imagen')->isValid()) {
-                $file = $request->file('imagen');
+        if ($request->hasFile('sector1')) {
+            if ($request->file('sector1')->isValid()) {
+                $file = $request->file('sector1');
                 $path = public_path('imagenes/contenido_home/');
-                $request->file('imagen')->move($path, $newid.'_'.$file->getClientOriginalName());
-                $contenido->imagen = 'imagenes/contenido_home/' . $newid.'_'.$file->getClientOriginalName();
+                $request->file('sector1')->move($path, $newid.'_'.$file->getClientOriginalName());
+                $contenido->sector1 = 'imagenes/contenido_home/' . $newid.'_'.$file->getClientOriginalName();
             }
         }  
+        if ($request->hasFile('sector2')) {
+            if ($request->file('sector2')->isValid()) {
+                $file = $request->file('sector2');
+                $path = public_path('imagenes/contenido_home/');
+                $request->file('sector2')->move($path, $newid.'_'.$file->getClientOriginalName());
+                $contenido->sector2 = 'imagenes/contenido_home/' . $newid.'_'.$file->getClientOriginalName();
+            }
+        } 
+        if ($request->hasFile('sector3')) {
+            if ($request->file('sector3')->isValid()) {
+                $file = $request->file('sector3');
+                $path = public_path('imagenes/contenido_home/');
+                $request->file('sector3')->move($path, $newid.'_'.$file->getClientOriginalName());
+                $contenido->sector3 = 'imagenes/contenido_home/' . $newid.'_'.$file->getClientOriginalName();
+            }
+        } 
+        if ($request->hasFile('sector4')) {
+            if ($request->file('sector4')->isValid()) {
+                $file = $request->file('sector4');
+                $path = public_path('imagenes/contenido_home/');
+                $request->file('sector4')->move($path, $newid.'_'.$file->getClientOriginalName());
+                $contenido->sector4 = 'imagenes/contenido_home/' . $newid.'_'.$file->getClientOriginalName();
+            }
+        } 
         $contenido->save();
         
         flash('Se ha actualizado de forma exitosa')->success()->important();

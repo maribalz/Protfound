@@ -232,47 +232,6 @@
 
                         <li>
 
-                            <a href="#"><i class="glyphicon glyphicon-th"></i> Calidad<span class="fa arrow"></span></a>
-
-                            <ul class="nav nav-second-level">
-
-                               <li>
-
-                                    <a href="{{ route('calidad.index') }}">Editar texto de calidad</a>
-                                    <a href="{{ route('descargas.index') }}">Editar descargas</a>
-
-                                </li>
-
-                            </ul>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#"><i class="glyphicon glyphicon-zoom-in"></i> Novedades<span class="fa arrow"></span></a>
-
-                            <ul class="nav nav-second-level">
-
-                                
-
-                                <li>
-
-                                    <a href="{{ route('categorias.index') }}">Editar Categorías</a>
-
-                                </li>
-
-                                <li>
-
-                                    <a href="{{ route('novedadm.index') }}">Editar Novedades</a>
-
-                                </li>
-
-                            </ul>
-
-                        </li>
-
-                        <li>
-
                             <a href="#"><i class="glyphicon glyphicon-th"></i> Clientes<span class="fa arrow"></span></a>
 
                             <ul class="nav nav-second-level">
@@ -286,6 +245,24 @@
                             </ul>
 
                         </li>
+
+                        <li>
+                            <a href="#"><i class="glyphicon glyphicon-th"></i> Calidad<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                               <li>
+                                    <a href="{{ route('calidad.index') }}">Editar contenido</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="glyphicon glyphicon-th"></i> Descargas<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                               <li>
+                                    <a href="{{ route('descargas.index') }}">Editar descargas</a>
+                                </li>
+                            </ul>
+                        </li>
+
 
                         <li>
 

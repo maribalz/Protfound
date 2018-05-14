@@ -225,28 +225,15 @@ ul:not(.browser-default)>li {
 }
 
 .caja-slider{
-
 	position: absolute;
-
-	background-color: rgb(149,34,48,0.65);
-
 	width: 60%;
-
 	height: auto;
-
 	bottom: 32%;
-
 	z-index: 99;
-
 	padding: 40px 45px;
-
 	left:20%;	
-
 	text-align: center;
-
 	color: white;
-
-
 
 }
 
@@ -294,9 +281,9 @@ ul:not(.browser-default)>li {
 
 div.caja-slider>p{
 
-	font-size: 25px!important;
+	font-size: 65px!important;
 
-	font-weight: 400;
+	font-weight: 300;
 
 	line-height: 1.2;
 
@@ -354,22 +341,76 @@ div.caja-slider>p{
 
 }
 
+.img-dest{
 
+	display: flex;
 
-.titledes{
+	justify-content: center;align-items: center;
 
-	color: #E43348;
+	height: 224px;
 
-	font-size: 45px;
+	border: 1px solid #DDDDDD;
 
-	font-weight:  700;
+	position: relative;
 
-	text-align: center;
+}
 
+.img-dest>img{
+
+	max-height: 100%;
+
+}
+
+.nom-dest{
+	width: 100%;
+	text-transform: capitalize;
+	border: 1px solid #DDDDDD;
+	border-top: 0px;
+	font-size: 16px;
+	font-weight: 400;
+	color: #4B4B4B;
+	text-align: left;
+	height: 70px;
+	padding-left: 10px;
+	padding-right: 25px;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+.nom-dest i{
+	position: absolute;
+	right: 8px;
+	top: 23px;
+	color: #001D93;
+}
+.titledestacados{
+	color: #E1131B;
+	font-size: 48px;
+	font-weight: 300;
 	margin-bottom: 4%;
+	text-align: center;
+}
+/*-----------------------------------------EMPRESA-------------------------------- */
 
-	    margin-top: 4%;
-
+.titledes p{
+	color: #E0131A;
+	font-size: 46px;
+	font-weight:  300;
+	margin-top: 0px;
+	margin-bottom: 4%;
+}
+.titledes span{
+	color: #717171;
+	font-size: 20px;
+	font-weight: 400;
+}
+.titledes div{
+	background-color: #F9F9F9;
+	padding: 10px 22px;
+	color: #333333;
+	font-size: 16px;
+	font-weight: 400;
+	margin-bottom: 4%;
 }
 
 .title-ase{
@@ -388,17 +429,6 @@ div.caja-slider>p{
 
 }
 
-.titledes .sub{
-
-	color: #747474;
-
-	font-size: 15px;
-
-	margin-top: 0px;
-
-	margin-bottom: 0px;
-
-}
 
 .margen{
 
@@ -406,66 +436,24 @@ div.caja-slider>p{
 
 }
 
-.img-dest{
-
-	display: flex;
-
-	justify-content: center;align-items: center;
-
-	height: 370px;
-
-	border: 1px solid #DDDDDD;
-
-	position: relative;
-
-}
-
-.img-dest>img{
-
-	max-height: 100%;
-
-}
-
-.nom-dest{
-
+.boximgcliente{
+	height: 163px;
+	border: 1px solid #dfdfdf;
+	border-bottom: 0px;
 	width: 100%;
-
-	text-transform: uppercase;
-
-	font-size: 22px;
-
-	font-weight: 400;
-
-	color: #E43348;
-
-	text-align: center;
-
-	margin-top: 20px;
-
-	height: 70px;
-
 }
+
 
 .nom-cliente{
-
 	width: 100%;
-
-	font-size: 22px;
-
+	font-size: 17px;
 	font-weight: 400;
-
-	color: #E43348;
-
-	text-align: center;
-
-	margin-top: 20px;
-
-	height: 70px;
-
-	border: 1px solid #B5AFAF;
-
-	
-
+	color: #333333;
+	background-color: #F8F8F8;
+	margin-bottom: 12%;
+	height: 45px;
+	border: 1px solid #dfdfdf;
+	border-bottom: 3px solid #001D93;
 }
 
 .raya-cliente{
@@ -535,81 +523,81 @@ div.caja-slider>p{
 }
 
 .fondogris{
-
 	background-color: rgba(238,238,238,0.4);
-
-	padding-top: 5%;
-
-	padding-bottom: 5%;
-
-	margin-top: 3%;
-
+	padding-top: 4%;
+	padding-bottom: 3.5%;
 }
 
 .minitext{
-
-	color: #747474;
-
+	color: #717171;
 	font-size: 20px;
-
 	font-weight: 400;
-
 	text-align: center;
-
 }
 
 .titulotext{
-
-	color: #E43348;
-
+	color: #E0131A;
 	font-size: 45px;
-
-	font-weight: 700;
-
+	font-weight: 300;
 	text-align: center;
-
-
-
 }
 
 .texthome{
-
-	color: #333333;
-
-	font-size: 15px;
-
+	color: #858585;
+	font-size: 18px;
 	font-weight: 300;
-
 	padding-top: 6% ;
-
 	text-align: center;
-
 	padding-left: 23%;
-
     padding-right: 23%;
-
 }
 
 .btn-historia{
-
-	color: #D00E24;
-
-	font-weight: 700;
-
-	border: 1px solid #D00E24;
-
+	color: #001D93;
+	font-weight: 400;
+	border-radius: 17px;
+	border: 1px solid #001D93;
 	background-color: rgba(238,238,238,0.4);
-
 	margin-top: 30px;
-
-	padding: 6px 28px;
-
+	padding: 10px 28px;
 }
-
+.texthome p{
+	    margin-bottom: 33px;
+}
 .margenhistoria{
 
-	padding-left: 20%;
+	padding-left: 21.5%;
 
-	padding-right:  20%;
+	padding-right:  21.5%;
 
+}
+.backindustria{
+	background-image: url('../../imagenes/backindustria.png');
+	background-size: cover;
+	    padding-top: 4%;
+    padding-bottom: 1%;
+}
+.infoind span{
+	color: white;
+	font-size: 40px;
+	font-weight: 400;
+}
+.infoind p{
+	font-size: 18px;
+	color: white;
+	font-weight: 300;
+}
+.sectorind{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.sectorind img{
+	margin-right: 13px;
+}
+.sectorind div{
+	font-size: 16px;
+	width: 77px;
+	color: white;
+	font-weight: 600;
 }

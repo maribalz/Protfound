@@ -81,12 +81,12 @@ class contenidoEmpController extends Controller
         $newid= $id+1;
 
         $contenido=contenido_empresa::find($request->id);
-        $contenido->texto_es=$request->texto_es;
-        $contenido->texto_en=$request->texto_en;
-        $contenido->texto_pt=$request->texto_pt;
-        $contenido->titulo_es=$request->titulo_es;
-        $contenido->titulo_en=$request->titulo_en;
-        $contenido->titulo_pt=$request->titulo_pt;
+        $contenido->titulo=$request->titulo;
+        $contenido->texto1=$request->texto1;
+        $contenido->texto2=$request->texto2;
+        $contenido->video=$request->video;
+        $contenido->texto_video=$request->texto_video;
+       
 
         if ($request->hasFile('imagen')) {
             if ($request->file('imagen')->isValid()) {

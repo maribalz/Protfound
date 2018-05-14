@@ -82,12 +82,7 @@ class DestacadosController extends Controller
     public function update_destacado(DestacadoRequest $request)
     {
         $destacado=producto_destacado::find($request->id);
-        $destacado->nombre_es=$request->nombre_es;
-        $destacado->nombre_en=$request->nombre_en;
-        $destacado->nombre_pt=$request->nombre_pt;
-        $destacado->texto_es=$request->texto_es;
-        $destacado->texto_en=$request->texto_en;
-        $destacado->texto_pt=$request->texto_pt;
+        $destacado->nombre=$request->nombre;
         $destacado->link=$request->link;
         $destacado->orden=$request->orden;
 

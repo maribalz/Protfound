@@ -1,0 +1,19 @@
+.textoserv{
+	color: #6B6B6B;
+	font-size: 18px;
+	font-weight: 400;
+}
+.textoserv h1{
+	color: #001D93;
+	font-size: 30px;
+	font-weight: 400;
+
+}
+.margenserv{
+	padding-top: 4%;
+	padding-bottom: 4%
+}
+.fondoserv{
+	background-color: #F8F8F8;
+	border-top: 1px solid #E0E0E0;
+}

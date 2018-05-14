@@ -12,6 +12,6 @@ class producto_destacado extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'imagen', 'nombre_es','nombre_en','nombre_pt','texto_es','texto_en', 'texto_pt', 'orden', 'link'
+        'id', 'imagen', 'nombre', 'orden', 'link'
     ];
 }

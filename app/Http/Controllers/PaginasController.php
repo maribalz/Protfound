@@ -85,23 +85,23 @@ class PaginasController extends Controller
     public function clientes()
     {
         $sliders= Cliente::orderBy('orden','ASC')->get();
-        $metadato= metadato::where('seccion','cliente')->first();
-        $active='cliente';
+        $metadato= metadato::where('seccion','clientes')->first();
+        $active='clientes';
         return view('pages.cliente', [
             'clientes' => $sliders, 
             'metadato' => $metadato,
             'active' => $active
         ]);
     }
-    public function servicios()
+    public function servicio()
     {
-        $metadato= metadato::where('seccion','servicio')->first();
-        $servicios = servicio::all()->first();
-        $active='servicio';
+        $metadato= metadato::where('seccion','servicios')->first();
+        $servicios = servicio::orderBy('orden')->get();
+        $active='servicios';
         return view('pages.servicios', [
             'metadato' => $metadato,
             'active' => $active,
-            'servicio' => $servicios
+            'servicios' => $servicios
         ]);
     }
 
@@ -266,14 +266,12 @@ class PaginasController extends Controller
     public function calidad()
     {
         $calidad= Calidad::all()->first();
-        $metadato= metadato::where('seccion','cliente')->first();
-        $descargas = Descarga::orderBy('orden','ASC')->get();
+        $metadato= metadato::where('seccion','calidad')->first();
         $active='calidad';
         return view('pages.calidad', [
-            'calidad' => $calidad, 
+            'contenido' => $calidad, 
             'metadato' => $metadato,
-            'active' => $active,
-            'descargas' => $descargas
+            'active' => $active
         ]);
     }
     public function consulta($id)

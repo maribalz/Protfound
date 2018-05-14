@@ -1,69 +1,38 @@
-.descargas{
-	color: #D00C24;
-	font-size: 38px;
-	font-weight: 400;
-}
-.lineatit{
-	border-bottom: 3px solid #FFD90C;
-	width: 6%;
-	margin-bottom: 6%;
-}
-.margenrow{
-	padding-left: 10%;
-	padding-right: 10%;
-}
-.box-descarga{
-	border: 1px solid #ddd;
-	height: 300px;
-	width: 100%;
-}
-.imgbox{
-	width: 100%;
-	height: 176px;
-}
-.imgbox>img{
-	width: 100%;
-}
-.nombre{
-	border-left: 3px solid #FFD90C;
-	height: 42px;
-	padding-left: 10px;
-	color: #444444;
-	font-size: 18px;
-	font-weight: 400;
-	margin-top: 28px;
-}
-.titulo{
-	color: #444444;
-	font-size: 16px;
-	font-weight: 400;
-	text-align: center;
-	height: 32px;
-	padding-top: 8px;
-	margin-bottom: 6px;
-}
-.margendescar{
-	margin-bottom: 6%;
-}
-.desc{
-	background-color: #545456;
-	height: 27px;
-	width: 37px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-right: 6px;
-}
-.ver{
-	background-color: #D00D24;
-	height: 27px;
-	width: 37px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.botones{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.titledes p{
+	color: #E0131A;
+	font-size: 46px;
+	font-weight:  300;
+	margin-top: 0px;
+	margin-bottom: 4%;
+}
+.titledes span{
+	color: #717171;
+	font-size: 20px;
+	font-weight: 400;
+}
+.boxdescarga{
+	width: 100%;
+	font-size: 22px;
+	font-weight: 400;
+	color: #464646;
+	background-color: #F8F8F8;
+	margin-bottom: 10%;
+	height: 119px;
+	border: 1px solid #dfdfdf;
+	border-bottom: 3px solid #001D93;
+	padding:12px 5% 12px 18%;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+.boxdescarga img{
+	position: absolute;
+	left: 12px;
+	top: 16px;
+}
+.boxdescarga i{
+	position: absolute;
+	right: 14px;
+	top: 39%;
+	color: #E1131B;
 }

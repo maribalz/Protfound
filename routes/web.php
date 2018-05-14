@@ -21,17 +21,18 @@ Route::get('/empresa',[
 				'uses'=>'PaginasController@empresa',
 				'as'=>'empresa'
 		]);
-Route::get('/servicios',[
-				'uses'=>'PaginasController@servicios',
-				'as'=>'servicios'
+
+Route::get('/servicio',[
+				'uses'=>'PaginasController@servicio',
+				'as'=>'servicio'
 		]);
 Route::get('/clientes',[
 				'uses'=>'PaginasController@clientes',
 				'as'=>'clientes'
 		]);
-Route::get('/calidad',[
+Route::get('/calidadind',[
 				'uses'=>'PaginasController@calidad',
-				'as'=>'calidad'
+				'as'=>'calidadind'
 		]);
 Route::get('/contacto',[
 				'uses'=>'PaginasController@contacto',

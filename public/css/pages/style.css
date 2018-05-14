@@ -71,8 +71,11 @@ img.logo{
 	width: 100%;
 }
 
-.activoli{
-	color: #E43449!important;
+.activo{
+	color: #E0131A!important;
+}
+.liactivo{
+	border-bottom: 3px solid #E1131B!important;
 }
 
 .back-white{
@@ -93,9 +96,6 @@ img.logo{
 	color: #444444;
 }
 
-.liactivo{
-	border-bottom: 3px solid #E43449!important;
-}
 
 .circle{
 	float: right;
@@ -110,28 +110,14 @@ img.logo{
 	align-items: center;
 }
 
-nav .dropdown-content{
 
-	min-width: 36px;
-
-	width: 55px!important;
-
-	height: 150px!important;
-
-}
-
-.dropdown-content li>a{
-
-	color: #747474;
-
-}
 
 /*-----------------------------------------------------FOOTER-------------------------*/
 
 .page-footer{
 	background-color:#2B2B2B;
 	color: white;
-	padding-top: 53px;
+	padding-top: 32px;
 	background-image: url("../../imagenes/fondofoot.png");
 	background-size: cover;
 }
@@ -141,17 +127,22 @@ nav .dropdown-content{
 	color: white;
 	font-weight: 400;
 }
-
+footer h5{
+	color: #E0131A;
+	font-size: 16px;
+	font-weight: 400;
+}
 .texto-mail{
         color: white;
         text-decoration: none;
         transition: 0.2s;
+        font-size: 16px;
 }
 
 .margenes-f{
 	display: flex;
     justify-content: center;
-    margin-top: 6%;
+    margin-top: 10.5%;
 }
 
 .margenfoot{
@@ -192,35 +183,42 @@ footer .material-icons{
 }
 
 .contemp{
-
-	color: #757575;
-
+	color: #717171;
 	font-size: 20px;
-
 	font-weight: 400;
-
 }
 
 .textoemp{
 
-	color: #333333;
-
-	font-weight: 300;
-
-	font-size: 18px;
+	color: #858585;
+	font-weight: 400;
+	font-size: 17px;
 
 }
-
+.textoemp h1{
+	color: #001D92;
+	font-size: 26px;
+	font-style: italic;
+	border-top: 1px solid #001D92;
+	margin-top: 0px;
+}
+.textvideo{
+	color: #001D93;
+	font-size: 26px;
+	font-weight: 400;
+	text-align: center;
+}
+.video{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2%;
+}
 .tituloemp{
 
-	color: #E43449;
-
+	color: #E0131A;
 	font-size: 45px;
-
 	font-weight: 400;
-
-	    margin-top: 10px;
-
+    margin-top: 10px;
     margin-bottom: 10px;
 
 }

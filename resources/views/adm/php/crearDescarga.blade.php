@@ -40,65 +40,22 @@
 
     {{ csrf_field() }}
         <div class="form-group col-sm-12 pad-panel" >
-            {!!Form::label('nombre_es','Nombre Español', ['class' => 'control-label'])!!}
-            {!! Form::text('nombre_es', null, ['class' => 'form-control', 'placeholder' => 'Ingrese un orden','required'])!!}
+            {!!Form::label('nombre','Nombre ', ['class' => 'control-label'])!!}
+            {!! Form::text('nombre', null, ['class' => 'form-control','required'])!!}
         </div>
-        <div class="form-group col-sm-12 pad-panel" >
-            {!!Form::label('nombre_en','Nombre Inglés', ['class' => 'control-label'])!!}
-            {!! Form::text('nombre_en', null, ['class' => 'form-control', 'placeholder' => 'Ingrese un orden','required'])!!}
-        </div>
-        <div class="form-group col-sm-12 pad-panel" >
-            {!!Form::label('nombre_pt','Nombre Portugues', ['class' => 'control-label'])!!}
-            {!! Form::text('nombre_pt', null, ['class' => 'form-control', 'placeholder' => 'Ingrese un orden','required'])!!}
-        </div>
+        
         <div class="form-group col-sm-12 pad-panel" >
 
-            {!!Form::label('archivo_es','Archivo Español', ['class' => 'control-label'])!!}
-
-              
-
-            {!! Form::file('archivo_es', ['class' => 'form-control'])!!}
-
-           
-
-        </div>
-        <div class="form-group col-sm-12 pad-panel" >
-
-            {!!Form::label('archivo_en','Archivo Inglés', ['class' => 'control-label'])!!}
-
-              
-
-            {!! Form::file('archivo_en', ['class' => 'form-control'])!!}
-
-           
-
-        </div>
-        <div class="form-group col-sm-12 pad-panel" >
-
-            {!!Form::label('archivo_pt','Archivo Portugués', ['class' => 'control-label'])!!}
-
-              
-
-            {!! Form::file('archivo_pt', ['class' => 'form-control'])!!}
-
-           
-
+            {!!Form::label('archivo','Archivo ', ['class' => 'control-label'])!!}
+            {!! Form::file('archivo', ['class' => 'form-control'])!!}
         </div>
         
 
         <div class="form-group col-sm-12 pad-panel" >
 
             {!!Form::label('orden','Orden', ['class' => 'control-label'])!!}
-
-              
-
             {!! Form::text('orden', null, ['class' => 'form-control', 'placeholder' => 'Ingrese un orden'])!!}
-
-           
-
         </div>
-
-
 
         <div class="form-group col-sm-12 pad-panel">
 

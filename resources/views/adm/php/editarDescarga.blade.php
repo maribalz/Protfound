@@ -46,52 +46,22 @@
 
         </div>
         <div class="form-group col-sm-12 pad-panel" >
-            {!!Form::label('nombre_es','Nombre Español', ['class' => 'control-label'])!!}
-            {!! Form::text('nombre_es', $descarga->nombre_es, ['class' => 'form-control', 'placeholder' => 'Ingrese un orden','required'])!!}
+            {!!Form::label('nombre','Nombre ', ['class' => 'control-label'])!!}
+            {!! Form::text('nombre', $descarga->nombre, ['class' => 'form-control','required'])!!}
         </div>
-        <div class="form-group col-sm-12 pad-panel" >
-            {!!Form::label('nombre_en','Nombre Inglés', ['class' => 'control-label'])!!}
-            {!! Form::text('nombre_en', $descarga->nombre_en, ['class' => 'form-control', 'placeholder' => 'Ingrese un orden','required'])!!}
-        </div>
-        <div class="form-group col-sm-12 pad-panel" >
-            {!!Form::label('nombre_pt','Nombre Portugues', ['class' => 'control-label'])!!}
-            {!! Form::text('nombre_pt', $descarga->nombre_pt, ['class' => 'form-control', 'placeholder' => 'Ingrese un orden','required'])!!}
-        </div>
+        
         <div class="form-group col-sm-12 pad-panel" >
 
-            {!!Form::label('archivo_es','Archivo Español', ['class' => 'control-label'])!!}
+            {!!Form::label('archivo','Archivo ', ['class' => 'control-label'])!!}
 
               
 
-            {!! Form::file('archivo_es', ['class' => 'form-control'])!!}
+            {!! Form::file('archivo', ['class' => 'form-control'])!!}
 
            
 
         </div>
-        <div class="form-group col-sm-12 pad-panel" >
-
-            {!!Form::label('archivo_en','Archivo Inglés', ['class' => 'control-label'])!!}
-
-              
-
-            {!! Form::file('archivo_en', ['class' => 'form-control'])!!}
-
-           
-
-        </div>
-        <div class="form-group col-sm-12 pad-panel" >
-
-            {!!Form::label('archivo_pt','Archivo Portugués', ['class' => 'control-label'])!!}
-
-              
-
-            {!! Form::file('archivo_pt', ['class' => 'form-control'])!!}
-
-           
-
-        </div>
-
-
+        
 
         <div class="form-group col-sm-12 pad-panel" >
 

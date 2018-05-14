@@ -18,15 +18,12 @@ class CalidadController extends Controller
     
     public function create()
     {
-        return view('adm.php.crearCalidad');
+       
     }
 
     public function store(Request $request)
     {
-        $cliente= new Calidad($request->all());
-        $cliente->save();
-        flash('Se ha registrado de forma exitosa')->success()->important();
-        return redirect()->route('calidad.index');
+        
     }
 
     
@@ -45,12 +42,25 @@ class CalidadController extends Controller
     public function update_calidad(Request $request)
     {
         $cliente=Calidad::find($request->id);
-        $cliente->contenido_es=$request->contenido_es;
-        $cliente->contenido_en=$request->contenido_en;
-        $cliente->contenido_pt=$request->contenido_pt;  
-        $cliente->titulo_es=$request->titulo_es;
-        $cliente->titulo_en=$request->titulo_en;
-        $cliente->titulo_pt=$request->titulo_pt;    
+        $cliente->texto1=$request->texto1; 
+        $cliente->texto2=$request->texto2;
+
+        if ($request->hasFile('certificado1')) {
+            if ($request->file('certificado1')->isValid()) {
+                $file = $request->file('certificado1');
+                $path = public_path('imagenes/calidad/');
+                $request->file('certificado1')->move($path.'_'.$file->getClientOriginalName());
+                $cliente->certificado1 = 'imagenes/calidad/' .'_'.$file->getClientOriginalName();
+            }
+        }    
+        if ($request->hasFile('certificado2')) {
+            if ($request->file('certificado2')->isValid()) {
+                $file = $request->file('certificado2');
+                $path = public_path('imagenes/calidad/');
+                $request->file('certificado2')->move($path.'_'.$file->getClientOriginalName());
+                $cliente->certificado2 = 'imagenes/calidad/' .'_'.$file->getClientOriginalName();
+            }
+        }  
         $cliente->save();
         
         flash('Se ha actualizado de forma exitosa')->success()->important();
@@ -66,10 +76,6 @@ class CalidadController extends Controller
    
     public function destroy($id)
     {
-        $cliente= Calidad::find($id);
-        $cliente -> delete();
-        
-        flash('Se ha eliminado exitosamente.')->success()->important();
-        return redirect()->route('calidad.index');
+   
     }
 }

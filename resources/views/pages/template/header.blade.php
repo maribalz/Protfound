@@ -12,31 +12,32 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
       <ul class="right hide-on-med-and-down">
-        <li>
-          <a href="sass.html">EMPRESA</a>
+        <li class="@if($active=='empresa') liactivo @endif">
+          <a href="{{route('empresa')}}" class="@if($active=='empresa') activo @endif">EMPRESA</a>
         </li>
         
         <li>
             <a href="">PRODUCTOS</a>
         </li>
-        <li>
-          <a href="">SERVICIOS</a>
+
+        <li class="@if($active=='servicios') liactivo @endif">
+          <a href="{{route('servicio')}}" class="@if($active=='servicios') activo @endif">SERVICIOS</a>
         </li>
 
-        <li>
-          <a href="">CLIENTES</a>
+        <li class="@if($active=='clientes') liactivo @endif">
+          <a href="{{route('clientes')}}" class="@if($active=='clientes') activo @endif">CLIENTES</a>
         </li>
 
-        <li>
-          <a href="">CALIDAD</a>
+        <li class="@if($active=='calidad') liactivo @endif">
+          <a href="{{route('calidadind')}}" class="@if($active=='calidad') activo @endif">CALIDAD</a>
         </li>
 
-        <li>
-          <a href="">DESCARGAS</a>
+        <li class="@if($active=='descargas') liactivo @endif">
+          <a href="{{route('descarga')}}" class="@if($active=='descargas') activo @endif">DESCARGAS</a>
         </li>
         
-        <li>
-          <a href="" style="padding-right: 0px;">CONTACTO</a>
+        <li class="@if($active=='contacto') liactivo @endif">
+          <a href="{{route('contacto')}}" class="@if($active=='contacto') activo @endif" style="padding-right: 0px;">CONTACTO</a>
         </li>
 
       </ul>
@@ -45,18 +46,18 @@
 </nav>
   <ul class="sidenav" id="mobile-demo">
     <li>
-      <a href="sass.html">EMPRESA</a>
+      <a href="{{route('empresa')}}">EMPRESA</a>
     </li>
     
     <li>
         <a href="">PRODUCTOS</a>
     </li>
     <li>
-      <a href="">SERVICIOS</a>
+      <a href="{{route('servicio')}}">SERVICIOS</a>
     </li>
 
     <li>
-      <a href="">CLIENTES</a>
+      <a href="{{route('clientes')}}">CLIENTES</a>
     </li>
 
     <li>
@@ -64,11 +65,11 @@
     </li>
 
     <li>
-      <a href="">DESCARGAS</a>
+      <a href="{{route('descarga')}}">DESCARGAS</a>
     </li>
     
     <li>
-      <a href="" style="padding-right: 0px;">CONTACTO</a>
+      <a href="{{route('contacto')}}" style="padding-right: 0px;">CONTACTO</a>
     </li>
 
   </ul>
