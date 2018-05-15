@@ -65,9 +65,7 @@ class FamiliaController extends Controller
     public function update_familia(Request $request)
     {
         $producto= Familia::find($request->id);
-        $producto->nombre_es= $request->nombre_es;
-        $producto->nombre_en= $request->nombre_en;
-        $producto->nombre_pt= $request->nombre_pt;
+        $producto->nombre= $request->nombre;
         $producto->orden= $request->orden;
 
         $id= Familia::all()->max('id');
@@ -91,7 +89,7 @@ class FamiliaController extends Controller
     public function destroy($id)
     {
         $producto= Familia::find($id);
-        $producto -> delete();
+        $producto ->delete();
         
         flash('Se ha eliminado exitosamente.')->success()->important();
         return redirect()->route('familia.index');

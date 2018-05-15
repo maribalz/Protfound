@@ -31,15 +31,11 @@
 			<table class="table table-striped table-bordered ">
 
 				<thead>
-
-					<td>Producto</td>
-
-					<td width="25%">Imagen</td>
-
-					<td>Contenido</td>
-
+					<td>Familia</td>
 					<td>Orden</td>
-
+					<td>Producto</td>
+					<td width="25%">Imagen</td>
+					<td>Descripcion</td>
 					<td>Acciones</td>
 
 				</thead>
@@ -49,19 +45,18 @@
 					@foreach($productos as $producto)
 
 						<tr>
-
-							<td>{{$producto->nombre_es}}</td>
-
-							<td><img class="img-responsive" src="{{asset($producto->imagen)}}"></td>
-
-							<td>{{$producto->contenido_es}}</td>
-
-							<td>{{$producto->orden}}</td>
-
-							
-
 							<td>
-
+								@foreach($familias as $fam)
+									@if($fam->id == $producto->id_familia)
+										{{$fam->nombre}}
+									@endif
+								@endforeach
+							</td>
+							<td>{{$producto->orden}}</td>
+							<td>{{$producto->nombre}}</td>
+							<td><img class="img-responsive" src="{{asset($producto->imagen)}}"></td>
+							<td>{{$producto->descripcion}}</td>
+							<td>
 							<a href="{{ route('galeria.index',$producto->id) }}" class="btn btn-xs btn-info">Galeria</a>
 							<a href="{{ route('modelo.index_modelo',$producto->id) }}" class="btn btn-xs btn-warning">Modelo</a>
 							<a href="{{ route('producto.edit',$producto->id) }}" class="btn btn-xs btn-warning">Editar</a>

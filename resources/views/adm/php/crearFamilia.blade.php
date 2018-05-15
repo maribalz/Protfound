@@ -42,39 +42,21 @@
 
         <div class="form-group col-sm-12 pad-panel" >
 
-            {!!Form::label('nombre_es','Nombre Español', ['class' => 'control-label'])!!}
-            {!! Form::text('nombre_es', null , ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre de la familia', 'required'])!!}
+            {!!Form::label('nombre','Nombre ', ['class' => 'control-label'])!!}
+            {!! Form::text('nombre', null , ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre de la familia', 'required'])!!}
         </div>
-        <div class="form-group col-sm-12 pad-panel" >
-
-            {!!Form::label('nombre_en','Nombre Inglés', ['class' => 'control-label'])!!}
-            {!! Form::text('nombre_en', null , ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre de la familia', 'required'])!!}
-        </div>
-        <div class="form-group col-sm-12 pad-panel" >
-
-            {!!Form::label('nombre_pt','Nombre Portugal', ['class' => 'control-label'])!!}
-            {!! Form::text('nombre_pt', null , ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre de la familia', 'required'])!!}
-        </div>
+       
         <div class="form-group col-sm-12 pad-panel" >
 
             {!!Form::label('Imagen','Imagen (Tamaño recomendado 362x311)', ['class' => 'control-label'])!!}
-
-              
-
             {!! Form::file('imagen', ['class' => 'form-control'])!!}
-
-           
-
         </div>
 
         <div class="form-group col-sm-12 pad-panel" >
 
             {!!Form::label('orden','Orden', ['class' => 'control-label'])!!}
-
             {!! Form::text('orden', null, ['class' => 'form-control', 'placeholder' => 'Ingrese un orden'])!!}
         </div>
-
-
 
         <div class="form-group col-sm-12 pad-panel">
 

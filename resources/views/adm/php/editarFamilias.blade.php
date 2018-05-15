@@ -50,7 +50,7 @@
 
 							<td>{{$familia->orden}}</td>
 
-							<td>{{$familia->nombre_es}}</td>
+							<td>{{$familia->nombre}}</td>
 
 							<td><img class="img-responsive" src="{{ asset($familia->imagen) }}"></td>
 
