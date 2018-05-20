@@ -1,9 +1,10 @@
 <div class="contenedor back-white hide-on-small-only hide-on-med-only">
+      <a href="{{route('busca')}}">
     <div class="circle">
-      <i class="material-icons">search</i>
-    </div>
+      <i class="material-icons" style="color: #363636;">search</i>
+    </div></a>
     <div class="conte-solicitud">
-    <a href="">SOLICITUD DE PRESUPUESTO</a>
+    <a href="{{route('presupuesto')}}">SOLICITUD DE PRESUPUESTO</a>
     </div>
 </div>
 <nav class="z-depth-0">
@@ -16,8 +17,8 @@
           <a href="{{route('empresa')}}" class="@if($active=='empresa') activo @endif">EMPRESA</a>
         </li>
         
-        <li>
-            <a href="">PRODUCTOS</a>
+        <li class="@if($active=='productos') liactivo @endif">
+            <a href="{{route('familias')}}" class="@if($active=='productos') activo @endif">PRODUCTOS</a>
         </li>
 
         <li class="@if($active=='servicios') liactivo @endif">

@@ -221,14 +221,7 @@
                                 </li>
                             </ul>
                         </li>   
-                        <li>
-                            <a href="#"><i class="glyphicon glyphicon-th"></i> Sectores<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                               <li>
-                                    <a href="{{ route('sectores.index') }}">Editar Sectores</a>
-                                </li>
-                            </ul>
-                        </li>      
+                          
 
                         <li>
 

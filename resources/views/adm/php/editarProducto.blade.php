@@ -69,7 +69,7 @@
 
         <div class="form-group col-sm-12 pad-panel" >
             {!!Form::label('Imagen','Imagen (Tamaño recomendado 267x191)', ['class' => 'control-label'])!!}
-            {!! Form::file('imagen', ['class' => 'form-control','required'])!!}
+            {!! Form::file('imagen', ['class' => 'form-control'])!!}
         </div>
 
 
@@ -97,7 +97,7 @@
 
 			<div class="col-sm-12">
 
-				<input class="btn btn-success" type="submit" value='Crear'/>
+				<input class="btn btn-success" type="submit" value='Editar'/>
 
 			</div>
 

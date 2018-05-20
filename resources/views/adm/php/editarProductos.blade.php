@@ -55,10 +55,9 @@
 							<td>{{$producto->orden}}</td>
 							<td>{{$producto->nombre}}</td>
 							<td><img class="img-responsive" src="{{asset($producto->imagen)}}"></td>
-							<td>{{$producto->descripcion}}</td>
+							<td>{!!$producto->descripcion!!}</td>
 							<td>
 							<a href="{{ route('galeria.index',$producto->id) }}" class="btn btn-xs btn-info">Galeria</a>
-							<a href="{{ route('modelo.index_modelo',$producto->id) }}" class="btn btn-xs btn-warning">Modelo</a>
 							<a href="{{ route('producto.edit',$producto->id) }}" class="btn btn-xs btn-warning">Editar</a>
 							<a href="{{ route('producto.destroy',$producto->id) }}" class="btn btn-xs btn-danger">Eliminar</a></td>
 

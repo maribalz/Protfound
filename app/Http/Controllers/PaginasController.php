@@ -17,6 +17,7 @@ use App\Mail\Sendbymail;
 use App\Mail\SendConsulta;
 use Illuminate\Support\Facades\Mail;
 use App\producto;
+use App\Familia;
 use App\Descarga;
 use App\galeria;
 use App\tabla;
@@ -154,7 +155,7 @@ class PaginasController extends Controller
     public function buscador(Request $request)
     {
         $buscar= $request->busca;
-        $productos= producto::where('nombre_es',$buscar)->orWhere('nombre_es','like','%'.$buscar.'%')->get();
+        $productos= producto::where('nombre',$buscar)->orWhere('nombre','like','%'.$buscar.'%')->get();
         $busca=1;
         $metadato= metadato::where('seccion','home')->first();
         $active='buscar';
@@ -178,91 +179,56 @@ class PaginasController extends Controller
             'rows' => $rows*/
         ]);
     }
-    public function novedades()
-    {
-        $categorias = categoria::orderBy('orden','ASC')->get();
-        $categorias2 = categoria::orderBy('orden','ASC')->get();
-        $novedades = novedad::orderBy('orden','asc')->get();
-
-        $metadato= metadato::where('seccion','novedades')->first();
-        $active='novedades';
-        return view('pages.novedades', [
-            'metadato' => $metadato,
-            'active' => $active,
-            'categorias' => $categorias,
-            'categorias2' => $categorias2,
-            'novedades' => $novedades
-        ]);
-    }
-    public function novedad($id)
-    {
-        $categorias = categoria::orderBy('orden','ASC')->get();
-        $categorias2 = categoria::orderBy('orden','ASC')->get();
-        $novedad = novedad::where('id',$id)->first();
-        $categorianove= categoria::where('id',$novedad->id_categoria)->first();
-
-        $metadato= metadato::where('seccion','novedades')->first();
-        $active='novedades';
-        return view('pages.novedad', [ 
-            'metadato' => $metadato,
-            'active' => $active,
-            'categorias' => $categorias,
-            'categorias2' => $categorias2,
-            'novedad' => $novedad,
-            'categorianove' => $categorianove
-        ]);
-    }
     
-    public function productos($id)
+    public function familias()
     {
-        $producto = producto::find($id);
+        $productos= Familia::orderBy('orden')->get();
         $metadato= metadato::where('seccion','productos')->first();
-        $modelo = Modelo::where('id_producto',$id)->orderBy('orden','ASC')->get();
-        $galeria = galeria::where('id_producto',$id)->orderby('orden','ASC')->get();
         $active='productos';
-        return view('pages.productos', [
-            'producto' => $producto,
-            'metadato' => $metadato,
-            'galerias' => $galeria,
-            'modelos' => $modelo,
-            'active' => $active
-        ]);
-    }
-    public function sectores_productos($id){
-        $relacion= Relacion::where('id_sector',$id)->get();
-        $productos = producto::all();
-        $metadato= metadato::where('seccion','sectores')->first();
-        $active='productos';
-        return view('pages.sectores_producto', [
-            'relaciones' => $relacion,
+        return view('pages.familias', [
             'productos' => $productos,
             'metadato' => $metadato,
             'active' => $active
         ]);
     }
-
-    public function producto()
+    public function productos($id)
     {
-        $productos= producto::all();
+        $productos = producto::where('id_familia',$id)->orderBy('orden')->get();
+        $familia = Familia::find($id);
+        $familias = Familia::orderBy('orden')->get();
         $metadato= metadato::where('seccion','productos')->first();
+        //$galeria = galeria::where('id_producto',$id)->orderby('orden','ASC')->get();
+        $active='productos';
+        return view('pages.productos', [
+            'productos' => $productos,
+            'familia' => $familia,
+            'familias' => $familias,
+            'metadato' => $metadato,
+            'active' => $active
+        ]);
+    }
+
+    public function producto($id)
+    {
+        $producto = producto::where('id',$id)->first();
+
+        $productos = producto::where('id_familia',$producto->id_familia)->orderBy('orden')->get();
+        $familia = Familia::find($producto->id_familia);
+        $familias = Familia::orderBy('orden')->get();
+        $metadato= metadato::where('seccion','productos')->first();
+        $galerias = galeria::where('id_producto',$id)->orderby('orden','ASC')->get();
         $active='productos';
         return view('pages.producto', [
             'productos' => $productos,
+            'producto' => $producto,
+            'galerias' => $galerias,
+            'familia' => $familia,
+            'familias' => $familias,
             'metadato' => $metadato,
             'active' => $active
         ]);
     }
-    public function sectores()
-    {
-        $productos= Sector::all();
-        $metadato= metadato::where('seccion','sectores')->first();
-        $active='sectores';
-        return view('pages.sectores', [
-            'productos' => $productos,
-            'metadato' => $metadato,
-            'active' => $active
-        ]);
-    }
+
     public function calidad()
     {
         $calidad= Calidad::all()->first();
@@ -274,40 +240,7 @@ class PaginasController extends Controller
             'active' => $active
         ]);
     }
-    public function consulta($id)
-    {
-        $tabla = tabla::where('id',$id)->first();
-        $metadato= metadato::where('seccion','contacto')->first();
-        $active='productos';
-        return view('pages.consulta', [
-            'metadato' => $metadato,
-            'active' => $active,
-            'tabla' => $tabla
-        ]);
-    }
-    public function enviarconsulta(Contacto $request)
-    {   
-        $tabla=tabla::where('id',$request->tabla)->first();
-
-        $dato= datos_empresa::where('tipo','email')->first();
-        $nombre= $request->nombre;
-        $apellido= $request->apellido;
-        $telefono= $request->telefono;
-        $empresa= $request->empresa;
-        $email= $request->email;
-        $mensaje= $request->mensaje;
-
-        
-
-
-        Mail::to($dato->descripcion)->send(new SendConsulta($nombre,$apellido,$email,$empresa,$mensaje,$tabla));
-        if (Mail::failures()) {
-            flash('Ha ocurrido un error.')->error()->important();
-            return redirect()->route('contacto');
-        }
-        flash('El mensaje se ha enviado exitosamente.')->success()->important();
-        return redirect()->route('consulta',$tabla->id);
-    }
+    
 
     public function presupuesto()
     {
@@ -331,7 +264,6 @@ class PaginasController extends Controller
         $localidad= $request->localidad;
         $telefono= $request->telefono;
         $detalles= $request->detalles;
-        $plano= $request->plano;
         
         
         $newid = producto::all()->max('id');
@@ -347,9 +279,9 @@ class PaginasController extends Controller
             }
         }
 
-         Mail::send('pages.enviarpresupuesto', ['nombre' => $nombre, 'telefono' => $telefono, 'email' => $email, 'localidad' => $localidad, 'detalles' => $detalles, 'plano' => $plano], function ($message) use ($archivo){
+         Mail::send('pages.enviarpresupuesto', ['nombre' => $nombre, 'telefono' => $telefono, 'email' => $email, 'localidad' => $localidad, 'detalles' => $detalles], function ($message) use ($archivo){
 
-            $message->from($dato->descripcion, 'Pitones Ferrite');
+            $message->from($dato->descripcion, 'Protfund');
 
             $message->to($dato->descripcion);
 

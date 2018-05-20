@@ -8,16 +8,16 @@
             <div class="col s6 m6 l1" >
                 <h5>SITEMAP</h5>
                     <a href="{{route('index')}}" class="texto-footer">Inicio</a><br>
-                    <a href="" class="texto-footer">Nosotros</a><br>
-                    <a href="{{route('empresa')}}" class="texto-footer">Productos</a><br>
-                    <a href="{{route('descarga')}}" class="texto-footer">Servicios</a><br>
+                    <a href="{{route('empresa')}}" class="texto-footer">Nosotros</a><br>
+                    <a href="{{route('familias')}}" class="texto-footer">Productos</a><br>
+                    <a href="{{route('servicio')}}" class="texto-footer">Servicios</a><br>
             </div>
 
             <div class="col s6 m6 l2" style="padding-right: 0px;margin-top: 45px;">
-                <a href="{{route('descarga')}}" class="texto-footer">Clientes</a><br>
-                <a href="{{route('descarga')}}" class="texto-footer">Calidad</a><br>
+                <a href="{{route('clientes')}}" class="texto-footer">Clientes</a><br>
+                <a href="{{route('calidadind')}}" class="texto-footer">Calidad</a><br>
                 <a href="{{route('descarga')}}" class="texto-footer">Solicitud de Presupuesto</a><br>
-                <a href="{{route('descarga')}}" class="texto-footer">Contacto</a><br>
+                <a href="{{route('contacto')}}" class="texto-footer">Contacto</a><br>
 
             </div>
 

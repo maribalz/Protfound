@@ -63,31 +63,19 @@ Route::get('/descargas',[
 				'uses'=>'PaginasController@descarga',
 				'as'=>'descarga'
 		]);
-
-Route::get('productos/{id}/producto',[
-				'uses'=>'PaginasController@productos',
-				'as'=>'producto'
+Route::get('familias',[
+				'uses'=>'PaginasController@familias',
+				'as'=>'familias'
 		]);
-Route::get('productos',[
-				'uses'=>'PaginasController@producto',
+Route::get('familias/{id}/productos',[
+				'uses'=>'PaginasController@productos',
 				'as'=>'productos'
 		]);
-Route::get('sectores',[
-				'uses'=>'PaginasController@sectores',
-				'as'=>'sectores'
+Route::get('familias/{id}/producto',[
+				'uses'=>'PaginasController@producto',
+				'as'=>'productoind'
 		]);
-Route::get('sectores/{id}/productos',[
-				'uses'=>'PaginasController@sectores_productos',
-				'as'=>'sectores.productos'
-		]);
-Route::get('producto/{id}/consulta',[
-				'uses'=>'PaginasController@consulta',
-				'as'=>'consulta'
-		]);
-Route::post('consulta/enviarconsulta',[
-				'uses'=>'PaginasController@enviarconsulta',
-				'as'=>'consulta.enviarconsulta'
-		]);
+
 Route::get('/presupuesto',[
 				'uses'=>'PaginasController@presupuesto',
 				'as'=>'presupuesto'

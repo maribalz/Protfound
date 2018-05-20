@@ -57,23 +57,16 @@ background-color: #E43348;
 .nom-pro{
 
 	width: 100%;
-
-    height: 50px;
-
+    height: 66px;
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
-    background-color: #F0F0F0;
-
-    border-bottom: 4px solid #E43449;
-
-    color: #E43449;
-
+    border:1px solid rgba(147,152,158,0.30);
+    border-top: 0px;
+    border-bottom: 4px solid #001D93;
+    color: #E0131A;
     font-family: 'Lato', sans-serif;
-
+    font-size: 18px;
     font-weight: 700;
 
 }
@@ -81,7 +74,7 @@ background-color: #E43348;
 .border{
 
 	border: 1px solid rgba(147,152,158,0.30);
-
+	height: 353px;
 	position: relative;
 
 }
